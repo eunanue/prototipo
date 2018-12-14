@@ -1,0 +1,42 @@
+<style type="text/css">
+	.login-form {
+		width: 500px;
+    	margin: 50px auto;
+	}
+    .login-form form {
+    	margin-bottom: 15px;
+        background: #f7f7f7;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+    .login-form h2 {
+        margin: 0 0 15px;
+    }
+    .form-control, .btn {
+        min-height: 38px;
+        border-radius: 2px;
+    }
+    .btn {        
+        font-size: 15px;
+        font-weight: bold;
+    }
+</style>
+
+<% provide(:title, "Log in") %>
+<div class="login-form">
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :msisdn %>
+       <div class="form-group">
+      <%= f.telephone_field :msisdn, class: 'form-control' %>
+      </div>
+       <div class="form-group">
+      <%= f.submit "Ingresar", class: "btn btn-primary" %>
+        </div> 
+    <% end %>
+
+  </div>
+  </div>
+</div>
